@@ -28,7 +28,7 @@
 // file system
 
 
-const fs= require('fs')
+const fs= require('fs');
 
 //  fs.writeFileSync('output.txt', 'Hello Saiful')
 //   fs.appendFileSync('output.txt', ' How are you?')
@@ -41,9 +41,31 @@ const fs= require('fs')
 
 
 // this is asynchronus method
-fs.readFile('output.txt', (err,data)=>{
-    console.log(data.toString())
+// fs.readFile('output.txt', (err,data)=>{
+//     console.log(data.toString())
+// })
+
+
+
+// console.log("Hello")
+
+
+
+
+
+
+
+const School= require('./school')
+
+
+const school= new School()
+
+
+//  register listner for barking event
+school.on('bark', ({period, text})=>{
+    console.log(`We need to run because ${period} ${text}`)
 })
 
-console.log("Hello")
 
+
+school.startPeriod()
